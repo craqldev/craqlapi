@@ -22,8 +22,10 @@ public class ProjectTree extends DirectoryTree {
 		}
 		catch (Exception e)
 		{
-			System.out.println("Couldn't open project " + name + ". Exception: " + e.getMessage());			
+			System.out.println("Couldn't open project " + root + " - " + name + ". Exception: " + e.getMessage());			
 			System.exit(0);
+			sourceFolder = null;
+			projectName = null;
 		}
 	}
 	

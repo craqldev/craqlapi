@@ -26,6 +26,5 @@ public class APITest {
 		LinkedList <ResultTree> results = API.executeQueryOnAST(query, astRoot);
 		
 		System.out.println(args[0] + " has " + results.size() + " try statements!");		
-	}
-	
+	}	
 }

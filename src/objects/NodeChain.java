@@ -574,7 +574,14 @@ public class NodeChain {
 		    
 		    if (vr1.ASTNodeResultFound)
 		    {
-		    	outString += vr1.ASTNodeResult.toString();
+		    	if (vr1.ASTNodeResult != null)
+		    	{
+		    		outString += vr1.ASTNodeResult.toString();
+		    	}
+		    	else
+		    	{
+		    		outString += "(null)";
+		    	}
 		    }
 		    if (vr1.intResultFound)
 		    {

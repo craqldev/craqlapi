@@ -5,7 +5,7 @@ import java.io.File;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
-
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -33,7 +33,8 @@ public class Controller {
 	//public static String ROOT = "C:\\Users\\Chervil\\Desktop\\gw\\program_comprehension\\code_archaeology\\data_area\\";
 	public static String ROOT = "C:\\Desktop\\gw\\program_comprehension\\code_archaeology\\data_area\\";
 	//public static String PROJECTROOT = "D:\\";
-	public static String PROJECTROOT = "C:\\Desktop\\gw\\program_comprehension\\code_archaeology\\data_area\\";
+	//public static String PROJECTROOT = "C:\\Desktop\\gw\\program_comprehension\\code_archaeology\\data_area\\";
+	public static String PROJECTROOT = "F:\\";
 	public static String PROPERTIES_FILE = "locals.properties";
 	//public static String ROOT = "";
 	public static boolean DEBUG = false;
@@ -128,8 +129,8 @@ public class Controller {
 			if (q.isTopLevel)
 			{
 				//resultTrees = QueryHandler.executeQuery(q, null, resultTrees, localsOutputFile);
-				if (q.queryName != null)
-					System.out.println("Query " + q.queryName + ":");
+				//if (q.queryName != null)
+					//System.out.println("Query " + q.queryName + ":");
 				resultTrees = QueryHandler.executeQuery(q, null, null, localsOutputFile, true);
 			}
 		}
@@ -337,7 +338,7 @@ public class Controller {
 						}
 						//Controller.projectsList = new LinkedList <ProjectTree> ();
 						QueryHandler.queries = new LinkedList<Query>();
-						System.out.println("Project " + i + "/" + projectNames.size() + ": Run(" + p + ", " + q + ", " + lIn + ", " + lOut + ");");
+						System.out.println("Project " + i + "/" + projectNames.size() + ": Run(" + p + ", " + q + ", " + lIn + ", " + lOut + "); - " + (new SimpleDateFormat("yyyy/MM/dd HH:mm:ss")).format(new Date()));
 						Run(p, q, lIn, lOut, additionalVars);
 					}
 				}

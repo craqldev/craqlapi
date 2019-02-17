@@ -11,8 +11,9 @@ import objects.ProjectTree;
 
 public class ProjectProcessor {
 
-	static String projectsDir = main.Controller.PROJECTROOT + "projects\\projectSource\\";
+	//static String projectsDir = main.Controller.PROJECTROOT + "projects\\projectSource\\";
 	//static String projectsDir = "F:\\projects\\";
+	static String projectsDir = main.Controller.PROJECTROOT + "projects\\";
 	static String projectsNamesFile = main.Controller.PROJECTROOT + "projects\\ProjectNames.txt";
 	static LinkedList<String> projectNames = new LinkedList<String>();
 	static ProjectTree currentProjectTree = null;
@@ -125,7 +126,8 @@ public class ProjectProcessor {
 			projectNames.add(projectName);
 			
 			ProjectTree project = new ProjectTree(new File(projectsDir+projectName),projectName);
-			Controller.projectsList.add(project);
+			if (project.projectName != null)
+				Controller.projectsList.add(project);
 		}
 	}
 
@@ -135,7 +137,8 @@ public class ProjectProcessor {
 		{
 			//File source = FindSourceFolder(new File(projectsDir+name));
 			ProjectTree project = new ProjectTree(new File(projectsDir+name),name);
-			Controller.projectsList.add(project);
+			if (project.projectName != null)
+				Controller.projectsList.add(project);
 			//System.out.println(source.getAbsolutePath());
 			
 			// Continue to build tree
